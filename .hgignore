@@ -1,0 +1,19 @@
+syntax: glob
+.env
+.gitignore
+.gitattributes
+.idea
+vendor/
+storage/
+bootstrap/cache/
+node_modules/
+Homestead.yml
+Homestead.json
+public/hot
+public/storage
+storage/*.key
+.vscode
+npm-debug.log
+yarn-error.log
+.phpstorm.meta.php
+_ide_helper.php
