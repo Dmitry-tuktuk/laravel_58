@@ -7,6 +7,7 @@ use App\Http\Requests\BlogCategoryUpdateRequest;
 use App\Repositories\BlogCategoryRepository;
 use Illuminate\Http\Request;
 use App\Models\BlogCategory;
+use Illuminate\Support\Str;
 
 /**
  * Управление категориями блога
@@ -63,7 +64,7 @@ class CategoryController extends BaseController
     {
         $data = $request->input();
         if(empty($data['slug'])){
-            $data['slug'] = str_slug($data['title']);
+            $data['slug'] = Str::slug($data['title']);
         }
 
         //Создание объекта и добавления в дб

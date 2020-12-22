@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d6275fb-eddd-491b-9039-e99ca80becdc" name="Default Changelist" comment="routes">
-      <change afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.phar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/debugbar/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel_58.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel_58.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="6d6275fb-eddd-491b-9039-e99ca80becdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/BlogPostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BlogPostFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_04_103409_create_blog_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_04_103409_create_blog_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_04_103421_create_blog_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_04_103421_create_blog_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/BlogCategoriesTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/BlogCategoriesTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,8 +157,16 @@
       <option name="presentableId" value="Default" />
       <updated>1608545172848</updated>
       <workItem from="1608545173966" duration="1070000" />
-      <workItem from="1608621506640" duration="1796000" />
+      <workItem from="1608621506640" duration="3709000" />
     </task>
+    <task id="LOCAL-00001" summary="install ide_helper and debugbar, update composer.json">
+      <created>1608625732119</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608625732119</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +177,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -184,5 +201,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
+    <MESSAGE value="install ide_helper and debugbar, update composer.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="install ide_helper and debugbar, update composer.json" />
   </component>
 </project>
