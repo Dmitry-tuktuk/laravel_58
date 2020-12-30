@@ -30,7 +30,7 @@ class BlogCategoryRepository extends CoreRepository
     }
 
     /**
-     * Получить список категорийдля вывода в выпадающем списке.
+     * Получить список категорий для вывода в выпадающем списке.
      *
      * @return Collection
      */

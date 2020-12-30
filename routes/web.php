@@ -38,10 +38,3 @@ Route::group($groupData, function () {
         ->except(['show'])
         ->names('blog.admin.posts');
 });
-
-
-
-
-
-
-//Route::resource('rest','RestTestController')->names('restTest');
