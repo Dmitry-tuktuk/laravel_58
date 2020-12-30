@@ -62,10 +62,11 @@
                         </div>
                         <div class="form-group">
                             <label for="slug">Идентификатор</label>
-                            <input name="slug" value="{{ $item->slug }}"
+                            <input name="slug"
+                                   value="{{ $item->slug }}"
                                    id="slug"
                                    type="text"
-                                   class="form-group">
+                                   class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="excerpt">Выдержка</label>
