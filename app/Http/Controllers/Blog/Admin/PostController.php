@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Blog\Admin;
 
+use App\Http\Requests\BlogPostUpdateRequest;
 use App\Repositories\BlogCategoryRepository;
 use App\Repositories\BlogPostRepository;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 /**
  * Управление статьями блога
@@ -39,7 +42,7 @@ class PostController extends BaseController
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function index()
     {
@@ -85,7 +88,7 @@ class PostController extends BaseController
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit($id)
     {
@@ -105,12 +108,39 @@ class PostController extends BaseController
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BlogPostUpdateRequest $request, $id)
     {
-        //
-        dd(__METHOD__, $request->all(), $id);
+        $item = $this->blogPostRepository->getEdit($id);
+
+        if(empty($item)){
+            return back()
+                ->withErrors(['msg'=>"Запись id=[{$id}] не найдена"])
+                ->withInput();
+        }
+
+        $data = $request->all();
+
+        if(empty($data['slug'])){
+            $data['slug'] = Str::slug($data['title']);
+        }
+        if(empty($item->published_at) && $data['is_published']){
+            $data['published_at']= Carbon::now();
+        }
+
+        $result = $item->update($data);
+
+        if($result){
+            return redirect()
+                ->route('blog.admin.posts.edit', $item->id)
+                ->with(['success'=> 'Успешно сохранено']);
+        } else {
+            return back()
+                ->withErrors(['msg'=>'Ошибка сохранения'])
+                ->withInput();
+        }
+
     }
 
     /**

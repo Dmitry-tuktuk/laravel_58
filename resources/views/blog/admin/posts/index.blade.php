@@ -3,13 +3,6 @@
 
 @section('content')
     <div class="container">
-        {{--        @if(session('success'))--}}
-        {{--            <div class="row justify-content-center">--}}
-        {{--                <div class="col-md-12">--}}
-        {{--                    --}}
-        {{--                </div>--}}
-        {{--            </div>--}}
-        {{--        @endif--}}
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
@@ -63,5 +56,3 @@
         @endif
     </div>
 @endsection
-
-

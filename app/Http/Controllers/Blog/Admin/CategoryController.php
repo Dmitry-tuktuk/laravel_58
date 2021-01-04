@@ -33,7 +33,6 @@ class CategoryController extends BaseController
      */
     public function index()
     {
-        //$paginator = BlogCategory::paginate(5);
         $paginator = $this->blogCategoryRepository->getAllWithPaginate(5);
 
         return view('blog.admin.categories.index', compact('paginator'));
@@ -87,14 +86,6 @@ class CategoryController extends BaseController
      */
     public function edit($id)
     {
-        /*
-        $categoryRepository = new BlogCategory();
-        $categoryRepository = app(BlogCategory::class);
-
-        $item = BlogCategory::findOrFail($id);
-        $categoryList = BlogCategory::all();
-
-        $item = $categoryRepository->getEdit($id);*/
 
         $item = $this->blogCategoryRepository->getEdit($id);// Получить запись по id
         if(empty($item)){
@@ -127,7 +118,7 @@ class CategoryController extends BaseController
 
         $data = $request->all();
         if(empty($data['slug'])){
-            $data['slug'] = str_slug($data['title']);
+            $data['slug'] = Str::slug($data['title']);
         }
         $result = $item->update($data);//Перезаписывает и сохраняет данные
 
