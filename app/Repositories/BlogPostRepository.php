@@ -41,7 +41,7 @@ class BlogPostRepository extends CoreRepository
         $relust = $this->startConditions()
             ->select($columns)
             ->orderBy('id', 'DESC')
-            //->with(['category', 'user'])/*жадная загрузка*/
+            /*жадная загрузка*/
             ->with([
                     'category' => function ($query) {
                     $query->select(['id','title']);
