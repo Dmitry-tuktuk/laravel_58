@@ -39,7 +39,7 @@ class BlogCategoryObserver
     /**
      * @param BlogCategory $blogCategory
      */
-    protected function updating(BlogCategory $blogCategory)
+    public function updating(BlogCategory $blogCategory)
     {
         $this->setSlug($blogCategory);
     }
